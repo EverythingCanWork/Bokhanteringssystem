@@ -390,7 +390,7 @@ public class Main {
     }
 
     public static void displayLibraryStatistics(ArrayList<String> titles, ArrayList<Boolean> available, ArrayList<String> userNames) {
-        int totalBooks = titles.size();
+        int totalBooks = titles.size(); //hejhej
         int totalAvailable = 0;
         int totalBorrowed = 0;
         System.out.println("Statistik: ");
