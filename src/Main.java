@@ -90,7 +90,7 @@ public class Main {
                 String authorAdd = scanner.nextLine();
                 System.out.println("ISBN: ");
                 String isbnADD = scanner.nextLine();
-                addBook(bookTitles, bookAuthors, bookISBN, titleAdd, authorAdd, isbnADD);
+                addBook(bookTitles, bookAuthors, bookISBN, bookAvailable, titleAdd, authorAdd, isbnADD);
                 break;
             case 2:
                 displayAllBooks(bookTitles, bookAuthors, bookISBN, bookAvailable);
@@ -192,23 +192,23 @@ public class Main {
     // Person 1, Marco
     public static void addBook(ArrayList<String> titles,
                                ArrayList<String> authors,
-                               ArrayList<String> isbn,
+                               ArrayList<String> isbn, ArrayList<Boolean> bookAvailable,
                                String title,
                             String author, String isbnNumber) {
 
         titles.add(title);
         authors.add(author);
         isbn.add(isbnNumber);
+        bookAvailable.add(true);
     }
 
     public static void displayAllBooks(ArrayList<String> titles,
                                        ArrayList<String> authors, ArrayList<String> isbn, ArrayList<Boolean> bookAvailable) {
-// marco
-        System.out.println("Display all books");
+        System.out.println("Visa alla böcker");
 
         for (int i = 0; i < titles.size(); i++){
 
-            String availableOutput = bookAvailable.get(i) ? " Available%n" : " Not available%n";
+            String availableOutput = bookAvailable.get(i) ? " Tillgänglig%n" : " Utlånad%n";
 
             System.out.printf(titles.get(i) + " " + authors.get(i) + " " + isbn.get(i) + availableOutput);
         }
