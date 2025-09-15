@@ -204,12 +204,11 @@ public class Main {
 
     public static void displayAllBooks(ArrayList<String> titles,
                                        ArrayList<String> authors, ArrayList<String> isbn, ArrayList<Boolean> bookAvailable) {
-// marco
-        System.out.println("Display all books");
+        System.out.println("Visa alla böcker");
 
         for (int i = 0; i < titles.size(); i++){
 
-            String availableOutput = bookAvailable.get(i) ? " Available%n" : " Not available%n";
+            String availableOutput = bookAvailable.get(i) ? " Tillgänglig%n" : " Utlånad%n";
 
             System.out.printf(titles.get(i) + " " + authors.get(i) + " " + isbn.get(i) + availableOutput);
         }
